@@ -29,7 +29,32 @@ namespace ClassRoom
                 Console.WriteLine(" Er født under " + klasse1.Årstid(studerende.fødselsdagsmåned));
             }
 
+            var SummerStudent =
+                (from student in students
+                 where klasse1.Årstid(student.fødselsdagsmåned) == "Sommer"
+                 select student.navn).Count();
 
+            var ForårStudent =
+               (from student in students
+                where klasse1.Årstid(student.fødselsdagsmåned) == "Forår"
+                select student.navn).Count();
+
+            var EfterårStudent =
+               (from student in students
+                where klasse1.Årstid(student.fødselsdagsmåned) == "Efterår"
+                select student.navn).Count();
+
+            var VinterStudent =
+               (from student in students
+                where klasse1.Årstid(student.fødselsdagsmåned) == "Vinter"
+                select student.navn).Count();
+
+
+            Console.WriteLine(SummerStudent);
+            Console.WriteLine(EfterårStudent);
+            Console.WriteLine(ForårStudent);
+            Console.WriteLine(VinterStudent);
+                               
            
             Console.ReadKey();
 
